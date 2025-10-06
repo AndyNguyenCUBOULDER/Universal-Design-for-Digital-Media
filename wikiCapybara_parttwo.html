@@ -124,18 +124,12 @@
     }
 
 
-    .sr-only:focus {
+    .sr-only {
       position: absolute;
-      width: auto;
-      height: auto;
-      padding: 0.5rem 1rem;
-      background-color: var(--background-color);
-      color: var(--link-color);
-      border-radius: 4px;
-      z-index: 1000;
-      clip: auto;
-      overflow: visible;
-      text-decoration: none;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
     }
 
 
@@ -173,7 +167,21 @@
 
 <body>
 
-  <a href="#maincontent" class="sr-only">Skip to main content</a>
+  <a href="#maincontent" class="sr-only" style="
+  opacity: 1;
+  color: #F7F3F0; 
+  background-color: #993D1F;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  text-decoration: none;
+">
+    Skip to main content
+  </a>
+
 
   <header class="container">
     <h1>Capybara</h1>
