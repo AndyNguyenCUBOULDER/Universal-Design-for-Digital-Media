@@ -124,12 +124,18 @@
     }
 
 
-    .sr-only {
+    .sr-only:focus {
       position: absolute;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
+      width: auto;
+      height: auto;
+      padding: 0.5rem 1rem;
+      background-color: var(--background-color);
+      color: var(--link-color);
+      border-radius: 4px;
+      z-index: 1000;
+      clip: auto;
+      overflow: visible;
+      text-decoration: none;
     }
 
 
@@ -186,7 +192,8 @@
       <a href="#conservation">Conservation</a>
       <a href="#culture">Popular Culture</a>
       <a href="#references">References</a>
-      <a href="https://andynguyencuboulder.github.io/Universal-Design-for-Digital-Media/index.html" target="_blank">Andy's Main Webpage</a>
+      <a href="https://andynguyencuboulder.github.io/Universal-Design-for-Digital-Media/index.html"
+        target="_blank">Andy's Main Webpage</a>
 
     </nav>
   </header>
