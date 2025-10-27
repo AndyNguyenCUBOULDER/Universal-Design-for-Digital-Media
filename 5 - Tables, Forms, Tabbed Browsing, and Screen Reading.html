@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Capybara — Semantic HTML5</title>
+  <meta name="description" content="Accessible semantic HTML5 page about the Capybara." />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #993D1F;
+      color: #F7F3F0;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #000;
+      color: #fff;
+      padding: 8px;
+      z-index: 100;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+
+    header, nav, main, footer { padding: 1rem; max-width: 900px; margin: 0 auto; }
+
+    nav a {
+      color: #FFD966;
+      text-decoration: none;
+      margin: 0 .5rem;
+    }
+    nav a:hover { color: #FFECA1; }
+
+    h1, h2 { font-family: 'Merriweather', serif; color: #FFD9B3; }
+    img { max-width: 100%; border-radius: 8px; }
+
+    table { border-collapse: collapse; width: 100%; margin-top: 1rem; }
+    th, td { border: 1px solid #E5B299; padding: .5rem; }
+    th { background: #7A2E13; }
+
+    form { margin-top: 2rem; background: #7A2E13; padding: 1rem; border-radius: 8px; }
+    label { display: block; margin-top: .5rem; color: #FFD9B3; }
+    input, textarea, select { width: 100%; padding: .5rem; margin-top: .25rem; }
+    button { margin-top: 1rem; padding: .5rem 1rem; background: #FFD966; border: none; border-radius: 4px; }
+
+    footer { text-align: center; font-size: .9rem; color: #FFD9B3; border-top: 1px solid #E5B299; }
+  </style>
+</head>
+
+<body>
+  <a href="#maincontent" class="skip-link">Skip to main content</a>
+
+  <header>
+    <h1><span class="material-icons" aria-hidden="true">pets</span> Capybara</h1>
+    <nav aria-label="Main navigation">
+      <a href="#overview" aria-current="true">Overview</a>
+      <a href="#habitat">Habitat</a>
+      <a href="#table">Data Table</a>
+      <a href="#form">Observation Form</a>
+    </nav>
+  </header>
+
+  <main id="maincontent">
+    <section id="overview">
+      <h2>Overview</h2>
+      <p>The <strong>capybara</strong> (<em>Hydrochoerus hydrochaeris</em>) is the largest living rodent, native to South America.
+        Capybaras inhabit savannas and dense forests near bodies of water and live in social groups of up to 100 individuals.
+        They are hunted for meat, hide, and grease from their thick skin.</p>
+      <figure>
+        <img src="Capybaraingrass.jpg" alt="Capybara sitting on grass">
+        <figcaption>Capybara in its natural habitat. Source: Wikipedia</figcaption>
+      </figure>
+    </section>
+
+    <section id="habitat">
+      <h2>Habitat & Ecology</h2>
+      <p>Capybaras are semiaquatic mammals found throughout South America, except Chile.
+        They are excellent swimmers and can hold their breath underwater for up to five minutes.
+        Many escapees from captivity live in similar watery habitats worldwide, including Florida.</p>
+    </section>
+
+    <section id="table">
+      <h2>Capybara Species Comparison</h2>
+      <table>
+        <caption>Comparison of Living Capybara Species</caption>
+        <thead>
+          <tr>
+            <th scope="col">Species</th>
+            <th scope="col">Scientific Name</th>
+            <th scope="col">Average Weight</th>
+            <th scope="col">Distribution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Greater Capybara</th>
+            <td><em>Hydrochoerus hydrochaeris</em></td>
+            <td>50 kg</td>
+            <td>All of South America except Chile</td>
+          </tr>
+          <tr>
+            <th scope="row">Lesser Capybara</th>
+            <td><em>Hydrochoerus isthmius</em></td>
+            <td>28 kg</td>
+            <td>Panama, Colombia, Venezuela</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="form">
+      <h2>Capybara Observation Form</h2>
+      <form aria-labelledby="form-heading">
+        <fieldset>
+          <legend id="form-heading">Report a Capybara Sighting</legend>
+
+          <label for="observer">Your Name</label>
+          <input type="text" id="observer" name="observer" required>
+
+          <label for="location">Location</label>
+          <input type="text" id="location" name="location" required>
+
+          <label for="count">Number Observed</label>
+          <input type="number" id="count" name="count" min="1" max="50">
+
+          <label for="behavior">Behavior Observed</label>
+          <textarea id="behavior" name="behavior" rows="4"></textarea>
+
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Content adapted from <a href="https://en.wikipedia.org/wiki/Capybara" target="_blank" rel="noopener">Wikipedia: Capybara</a>.</p>
+  </footer>
+</body>
+</html>
