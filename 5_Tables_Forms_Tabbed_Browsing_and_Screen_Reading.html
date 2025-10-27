@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,7 +8,8 @@
   <meta name="description" content="Accessible semantic HTML5 page about the Capybara." />
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&amp;family=Open+Sans&amp;display=swap"
+    rel="stylesheet">
   <!-- Google Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -29,32 +31,92 @@
       padding: 8px;
       z-index: 100;
     }
+
     .skip-link:focus {
       top: 0;
     }
 
-    header, nav, main, footer { padding: 1rem; max-width: 900px; margin: 0 auto; }
+    header,
+    nav,
+    main,
+    footer {
+      padding: 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
 
     nav a {
       color: #FFD966;
       text-decoration: none;
       margin: 0 .5rem;
     }
-    nav a:hover { color: #FFECA1; }
 
-    h1, h2 { font-family: 'Merriweather', serif; color: #FFD9B3; }
-    img { max-width: 100%; border-radius: 8px; }
+    nav a:hover {
+      color: #FFECA1;
+    }
 
-    table { border-collapse: collapse; width: 100%; margin-top: 1rem; }
-    th, td { border: 1px solid #E5B299; padding: .5rem; }
-    th { background: #7A2E13; }
+    h1,
+    h2 {
+      font-family: 'Merriweather', serif;
+      color: #FFD9B3;
+    }
 
-    form { margin-top: 2rem; background: #7A2E13; padding: 1rem; border-radius: 8px; }
-    label { display: block; margin-top: .5rem; color: #FFD9B3; }
-    input, textarea, select { width: 100%; padding: .5rem; margin-top: .25rem; }
-    button { margin-top: 1rem; padding: .5rem 1rem; background: #FFD966; border: none; border-radius: 4px; }
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
 
-    footer { text-align: center; font-size: .9rem; color: #FFD9B3; border-top: 1px solid #E5B299; }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    th,
+    td {
+      border: 1px solid #E5B299;
+      padding: .5rem;
+    }
+
+    th {
+      background: #7A2E13;
+    }
+
+    form {
+      margin-top: 2rem;
+      background: #7A2E13;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    label {
+      display: block;
+      margin-top: .5rem;
+      color: #FFD9B3;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: .5rem;
+      margin-top: .25rem;
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: .5rem 1rem;
+      background: #FFD966;
+      border: none;
+      border-radius: 4px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: .9rem;
+      color: #FFD9B3;
+      border-top: 1px solid #E5B299;
+    }
   </style>
 </head>
 
@@ -64,6 +126,7 @@
   <header>
     <h1><span class="material-icons" aria-hidden="true">pets</span> Capybara</h1>
     <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
       <a href="#overview" aria-current="true">Overview</a>
       <a href="#habitat">Habitat</a>
       <a href="#table">Data Table</a>
@@ -74,8 +137,10 @@
   <main id="maincontent">
     <section id="overview">
       <h2>Overview</h2>
-      <p>The <strong>capybara</strong> (<em>Hydrochoerus hydrochaeris</em>) is the largest living rodent, native to South America.
-        Capybaras inhabit savannas and dense forests near bodies of water and live in social groups of up to 100 individuals.
+      <p>The <strong>capybara</strong> (<em>Hydrochoerus hydrochaeris</em>) is the largest living rodent, native to
+        South America.
+        Capybaras inhabit savannas and dense forests near bodies of water and live in social groups of up to 100
+        individuals.
         They are hunted for meat, hide, and grease from their thick skin.</p>
       <figure>
         <img src="Capybaraingrass.jpg" alt="Capybara sitting on grass">
@@ -144,4 +209,5 @@
   </main>
 
 </body>
+
 </html>
