@@ -1,22 +1,243 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Andy Nguyen – Universal Design for Digital Media Webpage</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Andy Nguyen — Universal Design for Digital Media</title>
+  <meta name="description" content="About Me page for Andy Nguyen's Universal Design for Digital Media course." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --background-color: #993D1F;
+      --text-color: #FFD9B3;
+      --heading-color: #FFD9B3;
+      --link-color: #FFD9B3;
+      --link-hover: #FFECA1;
+      --border-color: #E5B299;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    header,
+    nav,
+    main,
+    footer,
+    section {
+      padding: 1rem 0;
+    }
+
+    h1,
+    h2 {
+      font-family: 'Merriweather', serif;
+      color: var(--heading-color);
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    nav {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    nav a {
+      color: var(--link-color);
+      text-decoration: none;
+      margin: 0 0.5rem;
+      font-weight: 600;
+    }
+
+    nav a:hover,
+    nav a[aria-current="true"] {
+      color: var(--link-hover);
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    p {
+      color: var(--text-color);
+      margin-bottom: 1rem;
+    }
+
+    img.responsive {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 8px;
+      border: 2px solid var(--border-color);
+    }
+
+    .about-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .about-grid img {
+      max-width: 45%;
+    }
+
+    figcaption {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--heading-color);
+      margin-top: 0.5rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin: 0.5rem 0;
+    }
+
+    ul li a {
+      color: var(--link-color);
+      text-decoration: underline;
+    }
+
+    ul li a:hover {
+      color: var(--link-hover);
+    }
+
+    footer {
+      border-top: 1px solid var(--border-color);
+      font-size: 0.9rem;
+      margin-top: 2rem;
+      text-align: center;
+      color: var(--heading-color);
+    }
+
+    footer a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+    }
+
+    a:focus {
+      outline: 3px solid var(--link-hover);
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 600px) {
+      nav a {
+        display: inline-block;
+        margin: 0.25rem 0.5rem;
+      }
+
+      .about-grid img {
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Welcome to My Universal Design Webpage</h1>
 
-  <h2>About Me</h2>
-  <p>Hi! My name is Andy Nguyen. This is my website for Universal Design in Digital Media. I will use this page to share my progress and projects throughout the semester. My favorite food is Banh It. I love bicycles, and this is my most recent bicycle project that I'm working on.</p>
+  <a href="#maincontent" class="sr-only" style="
+  opacity: 1;
+  color: #FFD9B3;
+  background-color: #993D1F;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  text-decoration: none;
+">
+    Skip to main content
+  </a>
 
-  <img src="mybike.jpg" alt="My Project Bike Sliver" width="600">
+  <header class="container">
+    <h1>Universal Design for Digital Media</h1>
+    <nav aria-label="Main Navigation">
+      <h2 class="sr-only">Main Navigation</h2>
+      <a href="#about">About Me</a>
+      <a href="#projects">Projects</a>
+    </nav>
+  </header>
 
-  <h2>Assignments</h2>
-  <ul>
-    <li><a href="wikiCapybara.html">Assignment 1 (4 Semantic html5 Part 1 Capybara Wiki Page)</a></li>
-    <li><a href="wikiCapybara_parttwo.html">Assignment 2 (4 - Semantic html5 Part 2 Capybara Wiki Page)</a></li>
-    <li><a href="5_Tables_Forms_Tabbed_Browsing_and_Screen_Reading.html">Assignment 3 (5 - Tables, Forms, Tabbed Browsing, and Screen Reading)</a></li>
-  </ul>
+  <main id="maincontent" class="container">
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-grid">
+        <div>
+          <p>Hello! 
+            My name is Andy Nguyen, and this page is part of my Universal Design for Digital Media coursework.
+            I’m passionate about web accessibility, clean layout, and making sure everyone can interact with digital
+            content easily. This site demonstrates the design and coding principles I’ve learned this semester.</p>
+          <p>Outside of class, I love cycling and working on bike projects. My current build is an old Panasonic
+            Japanese steel bike. I also enjoy photography, technology, and learning new ways to make the web a more
+            inclusive place for everyone.</p>
+        </div>
+        <figure>
+          <img src="IMG_2107.jpg" alt="Andy Nguyen" class="responsive">
+          <figcaption>This is me</figcaption>
+        </figure>
+        <figure>
+          <img src="mybike.jpg" alt="Andy Nguyen's silver bicycle project" class="responsive">
+          <figcaption>My current bike restoration project.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>My Coding Projects</h2>
+      <ul>
+        <li><a href="Lab2_Basics.html">Lab #2 — Coding & Posting a Web Page: The Basics</a></li>
+        <li><a href="Lab3_Tables_Forms_Tabbed_Browsing.html">Lab #3 — Tables, Forms, Tabbed Browsing, and Screen
+            Reading</a></li>
+        <li><a href="Lab4_Accessible_CSS_Layout.html">Lab #4 — Accessible CSS Layout</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="container">
+    <p>ATLS-CSCI 3150</p>
+    <a href="https://andynguyencuboulder.github.io/Universal-Design-for-Digital-Media/" target="_blank" rel="noopener">
+      Back to Main Page
+    </a>
+  </footer>
+
 </body>
+
 </html>
