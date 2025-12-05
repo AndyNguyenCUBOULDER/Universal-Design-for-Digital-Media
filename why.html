@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universal Design for the Web</title>
+    <title>Why Universal Design Matters</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <style>
+        /* ---- SAME CSS ---- */
         :root {
             --background-color: #993D1F;
             --text-color: #F7F3F0;
@@ -18,7 +19,6 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
             font-family: 'Roboto', sans-serif;
             background-color: var(--background-color);
@@ -43,9 +43,7 @@
         }
 
         .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
+            position: absolute; top: -40px; left: 0;
             background: var(--link-color);
             color: var(--background-color);
             padding: 0.5rem 1rem;
@@ -53,7 +51,6 @@
             z-index: 100;
             border-radius: 0 0 4px 0;
         }
-
         .skip-link:focus { top: 0; }
 
         header, nav, main, aside, footer {
@@ -63,65 +60,26 @@
             padding: 1.5rem;
         }
 
-        header {
-            grid-area: header;
-            text-align: center;
-            padding: 2rem;
-        }
+        header { grid-area: header; text-align: center; padding: 2rem; }
+        h1 { font-family: 'Merriweather', serif; color: var(--heading-color); font-size: 2rem; }
 
-        h1 {
-            font-family: 'Merriweather', serif;
-            color: var(--heading-color);
-            font-size: 2rem;
-        }
-
-        nav {
-            grid-area: nav;
-            padding: 1rem;
-        }
-
+        nav { grid-area: nav; padding: 1rem; }
         .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
+            position: absolute; width: 1px; height: 1px;
+            overflow: hidden; clip: rect(0, 0, 0, 0);
         }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-
+        nav ul { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
         nav a {
             color: var(--link-color);
             text-decoration: none;
             padding: 0.5rem 1rem;
         }
+        nav a:hover { color: var(--link-hover); text-decoration: underline; }
 
-        nav a:hover {
-            color: var(--link-hover);
-            text-decoration: underline;
-        }
-
-        main {
-            grid-area: main;
-            padding: 2rem;
-        }
-
-        section {
-            margin-bottom: 2rem;
-        }
-
-        h2 {
-            font-family: 'Merriweather', serif;
-            color: var(--heading-color);
-            margin-bottom: 0.5rem;
-        }
-
+        main { grid-area: main; padding: 2rem; }
+        section { margin-bottom: 2rem; }
+        h2 { font-family: 'Merriweather', serif; color: var(--heading-color); margin-bottom: 0.5rem; }
         p { margin-bottom: 1rem; }
 
         #aside1 { grid-area: aside1; }
@@ -134,21 +92,10 @@
             font-size: 0.9rem;
             color: var(--heading-color);
         }
+        footer a { color: var(--link-color); }
+        footer a:hover { color: var(--link-hover); }
 
-        footer a {
-            color: var(--link-color);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: var(--link-hover);
-            text-decoration: underline;
-        }
-
-        a:focus {
-            outline: 3px solid var(--link-hover);
-            outline-offset: 2px;
-        }
+        a:focus { outline: 3px solid var(--link-hover); outline-offset: 2px; }
 
         @media (max-width: 1024px) {
             .container {
@@ -173,68 +120,65 @@
                     "aside2"
                     "footer";
             }
-
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
+            nav ul { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
 
 <body>
-
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <div class="container">
 
         <header>
-            <h1>Universal Design for the Web</h1>
+            <h1>Why Universal Design Matters</h1>
         </header>
 
         <nav>
             <h2 class="sr-only">Page Navigation</h2>
             <ul>
-                <li><a href="myfinalproject.html" aria-current="page">Home</a></li>
+                <li><a href="myfinalproject.html">Home</a></li>
                 <li><a href="what.html">What</a></li>
-                <li><a href="why.html">Why</a></li>
+                <li><a href="why.html" aria-current="page">Why</a></li>
                 <li><a href="how.html">How</a></li>
                 <li><a href="index.html">Class Portal</a></li>
             </ul>
         </nav>
 
         <main id="main-content">
-
             <section>
-                <h2>Welcome</h2>
-                <p>This final project explores Universal Design and how it applies to the modern web. Our goal was to create an accessible and thoughtful technical experience. It represents the culmination of the semester and brings together everything we have learned into one final project.</p>
+                <h2>The Importance of Universal Design</h2>
+                <p>The digital world must be inclusive. Universal Design ensures that digital experiences reach the widest audience possible. Technology is used in countless ways by a diverse range of people, and design must reflect that diversity. Everyone uses technology differently, so making content usable across all abilities, devices, and environments is what makes Universal Design so important. </p>
             </section>
 
             <section>
-                <h2>What You Will Learn</h2>
+                <h2>Benefits for Users</h2>
                 <ul>
-                    <li>What Universal Design means in the context of digital spaces</li>
-                    <li>Why accessibility and usability benefit everyone</li>
-                    <li>How to implement Universal Design principles when building websites</li>
+                    <li>Reduces frustration and increases usability</li>
+                    <li>Supports users with disabilities and temporary limitations</li>
+                    <li>Improves clarity, structure, and readability</li>
+                    <li>Creates inclusive experiences that adapt to different needs</li>
                 </ul>
             </section>
 
             <section>
-                <h2>Explore the Sections</h2>
-                <p>Use the navigation above to explore what Universal Design is, why it matters, and how to implement
-                   it using practical best practices.</p>
+                <h2>Benefits for Designers & Organizations</h2>
+                <ul>
+                    <li>Reaches more users and increases engagement</li>
+                    <li>Reduces long-term maintenance and redesign costs</li>
+                    <li>Helps meet legal accessibility standards</li>
+                </ul>
             </section>
-
         </main>
 
         <aside id="aside1">
-            <h2>Quick Overview</h2>
-            <p>Universal Design creates environments usable by the widest range of people without modification.</p>
+            <h2>Did You Know?</h2>
+            <p>Over 61 million Americans live with a disability accessible design directly supports them.</p>
         </aside>
 
         <aside id="aside2">
             <h2>Course Note</h2>
-            <p>This project demonstrates accessible layouts, semantic HTML, and responsive design.</p>
+            <p>This page follows the same structure and accessibility patterns used across the project.</p>
         </aside>
 
         <footer>
@@ -242,6 +186,6 @@
         </footer>
 
     </div>
-
 </body>
+
 </html>

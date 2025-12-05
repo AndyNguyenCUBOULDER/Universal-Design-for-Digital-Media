@@ -1,110 +1,166 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Andy Nguyen — Universal Design for Digital Media</title>
-  <meta name="description" content="About Me page for Andy Nguyen's Universal Design for Digital Media course." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Andy Nguyen — Universal Design</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@400;700&display=swap"
     rel="stylesheet">
 
   <style>
     :root {
       --background-color: #993D1F;
-      --text-color: #FFD9B3;
+      --text-color: #F7F3F0;
       --heading-color: #FFD9B3;
-      --link-color: #FFD9B3;
+      --link-color: #FFD966;
       --link-hover: #FFECA1;
       --border-color: #E5B299;
     }
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'Roboto', sans-serif;
       background-color: var(--background-color);
       color: var(--text-color);
       line-height: 1.6;
-      margin: 0;
-      padding: 0;
     }
 
     .container {
-      max-width: 900px;
+      display: grid;
+      grid-template-columns: 1fr 3fr 1fr;
+      grid-template-rows: auto auto 1fr auto;
+      grid-template-areas:
+        "header header header"
+        "nav nav nav"
+        "aside1 main aside2"
+        "footer footer footer";
+      gap: 1rem;
+      max-width: 1400px;
       margin: 0 auto;
       padding: 1rem;
+      min-height: 100vh;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--link-color);
+      color: var(--background-color);
+      padding: 0.5rem 1rem;
+      z-index: 1000;
+      text-decoration: none;
+      border-radius: 0 0 4px 0;
+    }
+
+    .skip-link:focus {
+      top: 0;
     }
 
     header,
     nav,
     main,
-    footer,
-    section {
-      padding: 1rem 0;
+    aside,
+    footer {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      border: 2px solid var(--border-color);
+      padding: 1.5rem;
     }
 
-    h1,
-    h2 {
-      font-family: 'Merriweather', serif;
-      color: var(--heading-color);
-      margin-bottom: 0.5rem;
+    header {
+      grid-area: header;
+      text-align: center;
+      padding: 2rem;
     }
 
     h1 {
+      font-family: 'Merriweather', serif;
       font-size: 2rem;
-      text-align: center;
+      color: var(--heading-color);
     }
 
     nav {
-      text-align: center;
-      margin-bottom: 1rem;
+      grid-area: nav;
+      padding: 1rem;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
     }
 
     nav a {
       color: var(--link-color);
       text-decoration: none;
-      margin: 0 0.5rem;
+      padding: 0.5rem 1rem;
       font-weight: 600;
     }
 
     nav a:hover,
-    nav a[aria-current="true"] {
+    nav a[aria-current="page"] {
       color: var(--link-hover);
       text-decoration: underline;
-      font-weight: bold;
+    }
+
+    main {
+      grid-area: main;
+      padding: 2rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-family: 'Merriweather', serif;
+      color: var(--heading-color);
+      margin-bottom: 0.75rem;
     }
 
     p {
-      color: var(--text-color);
       margin-bottom: 1rem;
-    }
-
-    img.responsive {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-      border-radius: 8px;
-      border: 2px solid var(--border-color);
     }
 
     .about-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
+      gap: 1.5rem;
       align-items: center;
+      justify-content: center;
     }
 
     .about-grid img {
-      max-width: 45%;
+      max-width: 300px;
+      border-radius: 8px;
+      border: 2px solid var(--border-color);
+      display: block;
     }
 
     figcaption {
       text-align: center;
-      font-size: 0.9rem;
       color: var(--heading-color);
       margin-top: 0.5rem;
+      font-size: 0.9rem;
     }
 
     ul {
@@ -113,7 +169,7 @@
     }
 
     ul li {
-      margin: 0.5rem 0;
+      margin: 0.6rem 0;
     }
 
     ul li a {
@@ -125,11 +181,18 @@
       color: var(--link-hover);
     }
 
+    #aside1 {
+      grid-area: aside1;
+    }
+
+    #aside2 {
+      grid-area: aside2;
+    }
+
     footer {
-      border-top: 1px solid var(--border-color);
-      font-size: 0.9rem;
-      margin-top: 2rem;
+      grid-area: footer;
       text-align: center;
+      font-size: 0.9rem;
       color: var(--heading-color);
     }
 
@@ -143,27 +206,42 @@
       text-decoration: underline;
     }
 
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-    }
-
     a:focus {
       outline: 3px solid var(--link-hover);
       outline-offset: 2px;
     }
 
-    @media (max-width: 600px) {
-      nav a {
-        display: inline-block;
-        margin: 0.25rem 0.5rem;
+    @media (max-width: 1024px) {
+      .container {
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:
+          "header header"
+          "nav nav"
+          "aside1 main"
+          "aside2 aside2"
+          "footer footer";
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "header"
+          "nav"
+          "main"
+          "aside1"
+          "aside2"
+          "footer";
       }
 
-      .about-grid img {
-        max-width: 100%;
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .about-grid {
+        flex-direction: column;
       }
     }
   </style>
@@ -171,74 +249,83 @@
 
 <body>
 
-  <a href="#maincontent" class="sr-only" style="
-  opacity: 1;
-  color: #FFD9B3;
-  background-color: #993D1F;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  text-decoration: none;
-">
-    Skip to main content
-  </a>
+  <a href="#maincontent" class="skip-link">Skip to main content</a>
 
-  <header class="container">
-    <h1>Universal Design for Digital Media</h1>
+  <div class="container">
+
+    <header>
+      <h1>Universal Design for Digital Media</h1>
+    </header>
+
     <nav aria-label="Main Navigation">
-      <h2 class="sr-only">Main Navigation</h2>
-      <a href="#about">About Me</a>
-      <a href="#projects">Projects</a>
-    </nav>
-  </header>
-
-  <main id="maincontent" class="container">
-    <section id="about">
-      <h2>About Me</h2>
-      <div class="about-grid">
-        <div>
-          <p>Hello!
-            My name is Andy Nguyen, and this page is part of my Universal Design for Digital Media coursework.
-            I’m passionate about web accessibility, clean layout, and making sure everyone can interact with digital
-            content easily. This site demonstrates the design and coding principles I’ve learned this semester.</p>
-          <p>Outside of class, I love cycling and working on bike projects. My current build is an old Panasonic
-            Japanese steel bike. I also enjoy photography, technology, and learning new ways to make the web a more
-            inclusive place for everyone.</p>
-        </div>
-        <figure>
-          <img src="IMG_2107.jpg" alt="Andy Nguyen" class="responsive">
-          <figcaption>This is me</figcaption>
-        </figure>
-        <figure>
-          <img src="mybike.jpg" alt="Andy Nguyen's silver bicycle project" class="responsive">
-          <figcaption>My current bike restoration project.</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section id="projects">
-      <h2>My Coding Projects</h2>
+      <h2 class="sr-only">Navigation</h2>
       <ul>
-        <li><a href="Assignment_1_wikiCapybara.html">4 - Semantic html5 Part 1</a></li>
-        <li><a href="Assignment_2_wikiCapybara_parttwo.html">4b - Semantic html5 Part 2</a></li>
-        <li><a href="Assignment_3_5_Tables_Forms_Tabbed_Browsing_and_Screen_Reading.html">5 - Tables, Forms, Tabbed Browsing, and Screen Reading</a></li>
-        <li><a href="grid-flex.html">6 - Grid and Flexbox Layout</a></li>
-        <li><a href="myfinalproject.html">Final Project Checkpoint</a></li>
-
+        <li><a href="myfinalproject.html">Home</a></li>
+        <li><a href="what.html">What</a></li>
+        <li><a href="why.html">Why</a></li>
+        <li><a href="how.html">How</a></li>
+        <li><a href="index.html">Class Portal</a></li>
       </ul>
-    </section>
+    </nav>
 
-  </main>
+    <main id="maincontent">
 
-  <footer class="container">
-    <p>ATLS-CSCI 3150</p>
-    <a href="https://andynguyencuboulder.github.io/Universal-Design-for-Digital-Media/" target="_blank" rel="noopener">
-      Back to Main Page
-    </a>
-  </footer>
+      <section>
+        <h2>About Me</h2>
+        <div class="about-grid">
+          <div>
+            <p>Hello! My name is Andy Nguyen, and this page is part of my Universal Design for Digital Media coursework.
+              I’m passionate about accessibility, clean layout, and creating digital experiences that are easy for
+              everyone to navigate.</p>
+
+            <p>Outside of class, I love cycling and restoring old bikes. My current project is an old Panasonic Japanese
+              steel bike. I also enjoy photography, tech, and learning ways to improve web accessibility.</p>
+          </div>
+          <figure>
+            <img src="IMG_2107.jpg" alt="Andy Nguyen wearing a duck costume while browsing inside a bookstore.">
+            <figcaption>This is me.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="mybike.jpg" alt="Andy Nguyen’s silver Panasonic bicycle in the middle of a restoration project.">
+            <figcaption>My current bike restoration project.</figcaption>
+          </figure>
+
+        </div>
+      </section>
+
+      <section>
+        <h2>My Coding Projects</h2>
+        <ul>
+          <li><a href="Assignment_1_wikiCapybara.html">4 - Semantic HTML5 Part 1</a></li>
+          <li><a href="Assignment_2_wikiCapybara_parttwo.html">4b - Semantic HTML5 Part 2</a></li>
+          <li><a href="Assignment_3_5_Tables_Forms_Tabbed_Browsing_and_Screen_Reading.html">5 - Tables, Forms & Screen
+              Readers</a></li>
+          <li><a href="grid-flex.html">6 - Grid and Flexbox Layout</a></li>
+          <li><a href="myfinalproject.html">Final Project</a></li>
+        </ul>
+      </section>
+
+    </main>
+
+    <aside id="aside1">
+      <h2>Fun Fact</h2>
+      <p>I built my first personal bike from rescued parts collected over several months.</p>
+    </aside>
+
+    <aside id="aside2">
+      <h2>Course Note</h2>
+      <p>This page demonstrates the same Universal Design layout used across the entire project. My page has had many
+        different iterations and I decided to incorporate it all into the final project.</p>
+    </aside>
+
+    <footer>
+      <p>ATLS–CSCI 3150</p>
+      <a href="https://andynguyencuboulder.github.io/Universal-Design-for-Digital-Media/" target="_blank">Back to Main
+        Page</a>
+    </footer>
+
+  </div>
 
 </body>
 
