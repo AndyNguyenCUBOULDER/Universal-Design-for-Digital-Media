@@ -5,19 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Universal Design for the Web</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
 
     <style>
         :root {
             --background-color: #993D1F;
-            --text-color: #E8D4C2; /* Updated for WCAG AA */
+            --text-color: #E8D4C2;
+            /* Updated for WCAG AA */
             --heading-color: #FFD9B3;
             --link-color: #FFD966;
             --link-hover: #FFECA1;
             --border-color: #E5B299;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: 'Roboto', sans-serif;
@@ -54,9 +61,15 @@
             border-radius: 0 0 4px 0;
         }
 
-        .skip-link:focus { top: 0; }
+        .skip-link:focus {
+            top: 0;
+        }
 
-        header, nav, main, aside, footer {
+        header,
+        nav,
+        main,
+        aside,
+        footer {
             background: rgba(0, 0, 0, 0.2);
             border-radius: 8px;
             border: 2px solid var(--border-color);
@@ -112,7 +125,9 @@
             padding: 2rem;
         }
 
-        section { margin-bottom: 2rem; }
+        section {
+            margin-bottom: 2rem;
+        }
 
         h2 {
             font-family: 'Merriweather', serif;
@@ -120,10 +135,17 @@
             margin-bottom: 0.5rem;
         }
 
-        p { margin-bottom: 1rem; }
+        p {
+            margin-bottom: 1rem;
+        }
 
-        #aside1 { grid-area: aside1; }
-        #aside2 { grid-area: aside2; }
+        #aside1 {
+            grid-area: aside1;
+        }
+
+        #aside2 {
+            grid-area: aside2;
+        }
 
         footer {
             grid-area: footer;
@@ -189,9 +211,9 @@
         <header>
             <h1>Universal Design for the Web</h1>
         </header>
+        <nav aria-label="Main Navigation">
+            <h2 class="sr-only">Navigation</h2>
 
-        <nav>
-            <h2 class="sr-only">Page Navigation</h2>
             <ul>
                 <li><a href="myfinalproject.html" aria-current="page">Home</a></li>
                 <li><a href="what.html">What</a></li>
@@ -205,7 +227,9 @@
 
             <section>
                 <h2>Welcome</h2>
-                <p>This final project explores Universal Design and how it applies to the modern web. Our goal was to create an accessible and thoughtful technical experience. It represents the culmination of the semester and brings together everything we have learned into one final project.</p>
+                <p>This final project explores Universal Design and how it applies to the modern web. Our goal was to
+                    create an accessible and thoughtful technical experience. It represents the culmination of the
+                    semester and brings together everything we have learned into one final project.</p>
             </section>
 
             <section>
@@ -219,7 +243,8 @@
 
             <section>
                 <h2>Explore the Sections</h2>
-                <p>Use the navigation above to explore what Universal Design is, why it matters, and how to implement it using practical best practices.</p>
+                <p>Use the navigation above to explore what Universal Design is, why it matters, and how to implement it
+                    using practical best practices.</p>
             </section>
 
         </main>
@@ -241,4 +266,5 @@
     </div>
 
 </body>
+
 </html>
