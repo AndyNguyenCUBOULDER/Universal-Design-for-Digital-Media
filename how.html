@@ -12,7 +12,8 @@
     <style>
         :root {
             --background-color: #993D1F;
-            --text-color: #E8D4C2; /* Updated for contrast */
+            --text-color: #E8D4C2;
+            /* Updated for contrast */
             --heading-color: #FFD9B3;
             --link-color: #FFD966;
             --link-hover: #FFECA1;
@@ -211,6 +212,7 @@
                 <li><a href="what.html">What</a></li>
                 <li><a href="why.html">Why</a></li>
                 <li><a href="how.html" aria-current="page">How</a></li>
+                <li><a href="workcited.html">Resources</a></li>
                 <li><a href="index.html">Class Portal</a></li>
             </ul>
         </nav>
@@ -219,26 +221,213 @@
 
             <section>
                 <h2>Applying Universal Design</h2>
-                <p>Universal Design is applied through intentional choices that make digital interfaces usable for the widest range of people. It is not a single tool or feature—it is a design mindset that prioritizes clarity, accessibility, and flexibility.</p>
+                <p>Applying Universal Design means building a website that can be used, understood, and navigated by the
+                    widest
+                    range of people. Instead of designing for an imagined “average user,” Universal Design focuses on
+                    real human
+                    diversity. A good interface supports different devices, different abilities, and different
+                    environments.
+                    The goal is to reduce barriers before they appear by using clear structure, readable content, and
+                    flexible
+                    interaction patterns.</p>
+
+                <p>In this class, we learned that Universal Design on the web is not a single feature. It is a
+                    collection of
+                    practices tied together by strong fundamentals such as semantic HTML, accessible CSS, proper
+                    navigation,
+                    and meaningful content structure. These choices guide assistive technology, improve usability, and
+                    create
+                    a consistent experience for all users.</p>
             </section>
 
             <section>
-                <h2>Core Techniques</h2>
+                <h2>Core Techniques for Universal Design</h2>
+                <p>These techniques come directly from best practices we studied in Modules 4–7. They demonstrate how to
+                    apply
+                    Universal Design principles in real projects.</p>
+
                 <ul>
-                    <li><strong>Use semantic HTML:</strong> Elements like &lt;header&gt;, &lt;nav&gt;, and &lt;main&gt; clearly communicate structure to assistive technologies.</li>
-                    <li><strong>Support keyboard access:</strong> Every interactive element should work without a mouse.</li>
-                    <li><strong>Ensure visual clarity:</strong> High contrast, readable fonts, and consistent spacing improve comprehension.</li>
-                    <li><strong>Add alternative text:</strong> Provide meaningful descriptions for images so screen readers can convey their purpose.</li>
-                    <li><strong>Design responsively:</strong> Layouts should adapt to screens of all sizes, from phones to desktops.</li>
+                    <li><strong>Use semantic HTML:</strong> Proper elements like &lt;header&gt;, &lt;nav&gt;,
+                        &lt;main&gt;,
+                        &lt;section&gt;, and &lt;footer&gt; create a meaningful structure. Screen readers rely on these
+                        elements
+                        to understand the layout, so incorrect or missing semantics can make the site unusable for blind
+                        or
+                        low-vision users.</li>
+
+                    <li><strong>Clear heading hierarchy:</strong> Headings must follow a logical order (H1 → H2 → H3).
+                        A consistent structure helps users scan content, improves cognitive accessibility, and ensures
+                        assistive
+                        technologies can map the page correctly.</li>
+
+                    <li><strong>Keyboard accessibility:</strong> All interactive elements must work without a mouse.
+                        Buttons,
+                        forms, menus, and links should be focusable using the Tab key and triggered with Enter or Space.
+                        This supports users with motor disabilities, screen reader users, and anyone using a non-mouse
+                        device.</li>
+
+                    <li><strong>High-contrast, legible design:</strong> WCAG requires strong color contrast so text
+                        remains
+                        readable in different lighting conditions. Clear spacing, readable font sizes, and consistent
+                        alignment
+                        help users with low vision, dyslexia, and attention-related disabilities.</li>
+
+                    <li><strong>Responsive layout:</strong> A responsive grid and flexible images ensure the site works
+                        on
+                        mobile, tablets, desktops, and assistive browsing environments. This connects to Module 8, where
+                        we
+                        learned that mobile accessibility is essential to reaching all users.</li>
+
+                    <li><strong>Meaningful alternative text:</strong> Images should communicate their purpose.
+                        Informational graphics need descriptive alt text, while decorative images should use empty alt
+                        tags
+                        so screen readers skip them.</li>
+
+                    <li><strong>Forms with labels and feedback:</strong> Every input needs a visible label. Forms should
+                        also
+                        provide clear error messages and instructions. This supports users with cognitive disabilities
+                        and those
+                        using screen readers.</li>
+
+                    <li><strong>WAI-ARIA for complex components:</strong> ARIA roles and attributes help assistive
+                        technologies
+                        interpret interactive widgets such as dropdowns, tabs, and dynamic menus. ARIA should only be
+                        used
+                        when semantic HTML cannot express the same structure.</li>
+
+                    <li><strong>Descriptive links:</strong> Links such as “click here” give no context.
+                        Links should describe their destination, which helps screen reader users and supports better
+                        navigation.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Norman’s Design Concepts in Universal Design</h2>
+                <p>In this course we studied Norman’s key design concepts: affordance, constraints, feedback,
+                    visibility, and mapping.
+                    These principles help designers understand how people interact with interfaces and what information
+                    users need to use
+                    them successfully. When combined with Universal Design, Norman’s concepts help identify and remove
+                    barriers for users
+                    with different abilities, devices, and backgrounds.</p>
+
+                <ul>
+                    <li><strong>Affordance:</strong> Affordances describe what actions are possible. For buttons, links,
+                        form fields,
+                        and interactive elements, the user should immediately understand what they can do. For users
+                        with visual
+                        disabilities, this means consistent styling, clear focus indicators, and semantic elements that
+                        allow screen
+                        readers to announce controls correctly. Universal Design expands affordance by ensuring that the
+                        actions are
+                        perceivable by all users, not just those who rely on sight.</li>
+
+                    <li><strong>Constraints:</strong> Constraints limit how users can interact with a system, preventing
+                        mistakes.
+                        This is essential for cognitive accessibility because constraints help guide decision making.
+                        Clear labels,
+                        predictable navigation, disabled states, and meaningful error messages help users stay oriented
+                        and reduce
+                        confusion across all demographics.</li>
+
+                    <li><strong>Feedback:</strong> Feedback informs users about the results of their actions. For users
+                        with low vision
+                        or screen reader users, feedback must be communicated in multiple ways: visible messages, ARIA
+                        live regions,
+                        or sound cues. Feedback also supports motor-impaired users by confirming successful interactions
+                        without requiring
+                        precise movement or repeated clicks.</li>
+
+                    <li><strong>Visibility:</strong> Visibility ensures users can see what options are available.
+                        High-contrast design,
+                        clear headings, logical grouping, and consistent layout improve visibility for users with visual
+                        impairments,
+                        color blindness, or attention-related disabilities. Visibility also connects directly to WCAG’s
+                        Perceivable
+                        principle.</li>
+
+                    <li><strong>Mapping:</strong> Mapping describes the relationship between controls and their actions.
+                        Good mapping
+                        ensures users understand how to move through a site without trial and error. Consistent
+                        navigation, predictable
+                        button placement, and intuitive mobile layouts support users across different platforms and
+                        devices.</li>
+                </ul>
+
+                <h3>Why We Must Go Beyond Affordance</h3>
+                <p>The Inclusion Principle argues that traditional affordance alone is not enough because it focuses
+                    primarily on the
+                    “average user.” Affordances often assume the user sees, interprets, and physically interacts with
+                    controls in typical
+                    ways. Universal Design challenges this assumption. A button may look clickable to a sighted user,
+                    but without a semantic
+                    role or label, it is invisible to a screen reader. A gesture may feel natural to some users, but
+                    impossible for someone
+                    with motor impairments. Going beyond affordance means designing interactions that work regardless of
+                    a user’s sensory,
+                    cognitive, or physical abilities.</p>
+
+                <p>When Norman’s concepts are expanded through Universal Design, the result is an interface that
+                    supports all users:
+                    those with disabilities, users on mobile devices, multilingual users, older adults, children, and
+                    anyone interacting
+                    under different conditions or constraints.</p>
+            </section>
+
+            <section>
+                <h2>Universal Design and the WCAG POUR Framework</h2>
+                <p>WCAG organizes accessibility guidelines into four principles known as POUR. Universal Design
+                    naturally aligns
+                    with these principles:</p>
+
+                <ul>
+                    <li><strong>Perceivable:</strong> Users must be able to perceive content. This includes text
+                        alternatives,
+                        captions, contrast, and readable layouts.</li>
+
+                    <li><strong>Operable:</strong> Users must be able to navigate the site. This means keyboard access,
+                        logical focus order, skip links, and avoiding time-dependent interactions.</li>
+
+                    <li><strong>Understandable:</strong> Users must understand how to use the interface.
+                        Clear instructions, consistent navigation, and predictable behaviors support cognitive
+                        accessibility.</li>
+
+                    <li><strong>Robust:</strong> Content must work across current and future technologies.
+                        Valid HTML, proper semantics, and ARIA rules prevent compatibility issues.</li>
                 </ul>
             </section>
 
             <section>
                 <h2>Testing for Accessibility</h2>
-                <p>Testing confirms whether Universal Design choices are working as intended. Use keyboard navigation, screen readers, and automated tools such as WAVE or Lighthouse to identify barriers and strengthen usability.</p>
+                <p>Accessibility testing is a required part of Universal Design. No design is complete until it is
+                    tested with
+                    different tools and environments. In class we practiced several methods that reveal barriers:</p>
+
+                <ul>
+                    <li><strong>Keyboard-only testing:</strong> Attempting to navigate the entire site with only the
+                        Tab,
+                        Shift+Tab, Enter, and Space keys ensures operability for non-mouse users.</li>
+
+                    <li><strong>Screen readers:</strong> Tools like NVDA or VoiceOver reveal whether headings,
+                        landmarks,
+                        labels, and reading order are correct.</li>
+
+                    <li><strong>Automated tools:</strong> WAVE, Silktide, and Lighthouse flag issues such as missing alt
+                        text,
+                        low contrast, unlabeled forms, and incorrect semantics.</li>
+
+                    <li><strong>HTML validation:</strong> The W3C Validator helps maintain robust and error-free code so
+                        assistive
+                        technology can interpret the page correctly.</li>
+                </ul>
+
+                <p>Testing is not a one-time task. Universal Design requires continuous improvement as content changes
+                    and new
+                    technologies emerge.</p>
             </section>
 
         </main>
+
 
         <aside id="aside1">
             <h2>Helpful Tools</h2>
@@ -266,7 +455,8 @@
 
         <aside id="aside2">
             <h2>Reminder</h2>
-            <p>Universal Design is a continuous process. As new technologies, devices, and ideas emerge, designers must keep refining and adapting their work to ensure accessibility for all users.</p>
+            <p>Universal Design is a continuous process. As new technologies, devices, and ideas emerge, designers must
+                keep refining and adapting their work to ensure accessibility for all users.</p>
         </aside>
 
         <footer>
